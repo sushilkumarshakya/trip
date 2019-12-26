@@ -1,10 +1,21 @@
 import React from 'react';
+import {BrowserRouter as Router, Route,Switch} from 'react-router-dom'
+import './App.css';
+import Login from './Components/Login';
+import Search from './Components/Search';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to Trip to World!</h1>
-      <h1>Hello Users One</h1>
+      <Router>
+          <div>                            
+          <Switch>
+          <Route exact path="/" component={Login}/>
+          <Route path="/search/" component={Search}/>          
+          </Switch>   
+          </div>
+      </Router>    
     </div>
   );
 }
